@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Alert</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e2d5fd;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 22px;
+            cursor: pointer;
+            background-color: #001aff;
+            color: white;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #007411;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Cognifyz...Wish You A Luck !</h1>
+    <button onclick="showGreeting()">Click for Greeting</button>
+
+    <script>
+        function showGreeting() {
+            let now = new Date();
+            let hour = now.getHours();
+            let greeting;
+
+            if (hour < 12) {
+                greeting = "Good Morning! 🌅";
+            } else if (hour < 18) {
+                greeting = "Good Afternoon! ☀️";
+            } else {
+                greeting = "Good Evening! 🌙";
+            }
+
+            alert(greeting);
+        }
+    </script>
+
+</body>
+</html>
+
+

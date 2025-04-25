@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Internship | Cognifyz Technologies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:  rgb(239, 230, 255);
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+
+        .header {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(30, 0, 255, 0.75),rgba(95, 95, 95, 0.75));
+            background-size: cover;
+            background-position: center;
+        }
+        .logo img {
+            max-height: 100px;                    
+            margin-left: 10px;                     
+        }
+
+        nav{
+            display: flex;
+            padding: 3% 5%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-menu{
+            text-align: right;
+        }
+        .nav-menu ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 12px;
+            position: relative;
+        }
+        .nav-menu ul li a{
+            text-decoration: none;
+            color: aliceblue;
+            font-size: 14px;
+        }
+        .nav-menu ul li ::after{
+            content: ' ';
+            width:12px;
+            height: 3px;
+            background: rgb(255, 174, 0);
+            display:block;
+            margin: auto;
+            position:absolute;
+            bottom: -3px;
+            transition: .5s;
+        }
+        .nav-menu ul li :hover::after{
+            width:100%;
+        }
+        .profile-img{
+            width:35%;
+            position:absolute;
+            top:40%;
+            left:50%;
+            transform: translate(20%,-28%);
+        
+        }
+        .title{
+            width: 80%;
+            color: rgb(245, 245, 245);
+            position: absolute;
+            top:50%;
+            right:65%;
+            transform: translate(50%,-50%);
+        }
+        .title h2{
+            font-size: 60px;
+            color: #fff;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        
+        }
+        .title a{
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            border: 2px solid white;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+            padding: 12px 20px;
+            font-size: 15px;
+        }
+        .title a:hover{
+            background: #5900ff;
+            border:4px solid rgb(255, 255, 255);
+            transition: 1.2s;
+        }
+        nav span{
+            display: none;
+        }
+        @media(max-width:700px){
+            .title{
+                width: 80%;
+                color: aliceblue;
+                position: absolute;
+                top:80%;
+                right:50%;
+                transform: translate(50%,-50%);
+                text-align: center;
+            }
+            .title h2{
+                font-size: 22px;
+            }
+            nav span{
+                display: block;
+                color: #fff;
+                margin: 10px;
+                cursor: pointer;
+            }
+            .nav-menu{
+                position:absolute;
+                background:rgba(0,0,0,0.2);
+                height:100vh;
+                width:300px;
+                top:0;
+                right:-300px;
+                text-align: left;
+                z-index: 1;
+            }
+            .nav-menu ul li{
+                display:block;
+                margin: 10px;
+            }
+            .profile-img{
+                width:52%;
+                position:absolute;
+                top:30%;
+                left:10%;
+                transform: translate(20%,-28%);
+            
+            }
+        }
+
+        .intro {
+            padding: 30px 0;
+        }
+
+        .highlights, .qualifications {
+            background: rgb(255, 255, 255);
+            color: #646262;
+            font-size: 18px;
+            padding: 20px;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color:#ff7300;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        .cta {
+            margin-top: 20px;
+        }
+
+        .cta button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 400;
+            background-color: #5900ff;
+            color: rgb(255, 255, 255);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .cta button:hover {
+            background-color: #218838;
+        }
+
+        .footer {
+            background-color: #1a1818;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt=" cognifyz Logo">   
+            </div>
+            <div class="nav-menu" id="navmenus">
+                <span onclick="hidemenu()">X</span>
+                <ul>
+                    <li><a href="https://cognifyz.com/">Home</a></li>
+                    <li><a href="https://cognifyz.com/about-us/">About</a></li>
+                    <li><a href="https://cognifyz.com/contact-us/">Contact Us</a></li>
+                    <li><input type="text" name="search"><input type="submit" name="submit" value="search"> </li>
+                </ul>
+            </div>
+
+            <span onclick="openmenu()">Menu</span>
+            <img src="header.png" class="profile-img">
+         
+            <div class="title">
+                <h2>Web Developer Internship Opportunities at Cognifyz Technologies</h2>
+                
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScd5TRLHUVC8kle_6k4JceWTcfknRoNsuRB6Q4ymhGrAIsnSA/viewform">Register</a>
+                <a href="https://cognifyz.com/">Know More</a>
+            </div>
+
+        </nav> 
+    </div>
+ 
+
+    <div class="container">
+        <section class="intro">
+            <h2>Join Our Internship Program</h2>
+            <p>Gain hands-on experience, Work on real projects, Learn from industry experts,and Receive an internship certificate.</p>
+            <p><strong>Duration :</strong> 1 Months (Flexible Timings)<br></p>
+        </section>
+
+        <section class="highlights">
+            <h2>Internship Highlights</h2>
+            <ul>
+                <li>🔹 Work on real-world projects</li>
+                <li>🔹 Get mentorship from experienced developers</li>
+                <li>🔹 Learn industry best practices</li>
+                <li>🔹 Receive an internship certificate</li>
+            </ul>
+        </section>
+
+        <section class="qualifications">
+            <h2>Skills and Technologies.</h2>
+            <p>We are looking for candidates with knowledge of:</p>
+            <ul>
+                <li>✅ HTML, CSS, JavaScript</li>
+                <li>✅ React.js or Angular (Preferred)</li>
+                <li>✅ Backend (Node.js, Python, or PHP) is a plus</li>
+                <li>✅ Problem-solving and teamwork skills</li>
+            </ul>
+        </section>
+
+        <div class="cta">
+            <button onclick="applyNow()">Apply Now</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Contact Us</h2>
+        <p>📧 Email:cognifyztechnologies@gmail.com| 📞 Contact: +91 98765 43210 | 
+            📍 Nagpur, Maharashtra</p>
+        <p>&copy; 2023 Cognifyz Technologies. All rights reserved.</p>
+    </div>
+
+    <script>
+
+        var navmenus=document.getElementById('navmenus');
+        function openmenu()
+        {
+            navmenus.style.right="0";
+        }
+        function hidemenu()
+        {
+            navmenus.style.right="-300px";
+
+        }
+
+        function applyNow() {
+            window.location.href = "https://www.cognifyz.com/apply"; // Replace with actual application link
+        }
+    </script>
+
+</body>
+</html>
+

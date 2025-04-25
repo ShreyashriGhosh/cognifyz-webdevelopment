@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #c7f0f8;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .gallery img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 1.5s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.5);
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 1px;
+            left: 1px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Image Gallery</h2>
+    <div class="gallery">
+        <img src="cognifyz.jpeg" onclick="openModal(this.src)">
+        <img src="radhakrishna.jpg" onclick="openModal(this.src)">
+        <img src="lord-ganesha-.jpg" onclick="openModal(this.src)">
+        <img src="radhakrishna1.jpg" onclick="openModal(this.src)">
+        <img src="mahadev.jpg" onclick="openModal(this.src)">
+        <img src="maa tara.jpg" onclick="openModal(this.src)">
+    </div>
+
+    <div class="modal" id="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalimg">
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById("modal").style.display = "flex";
+            document.getElementById("modalimg").src = src;
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
